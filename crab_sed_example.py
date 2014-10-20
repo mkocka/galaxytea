@@ -24,7 +24,7 @@ flux = u.Quantity(crab_flux(energy.to('TeV').value), 'cm^-2 s^-1 TeV^-1')
 energy_flux = (energy ** 2 * flux).to('erg cm^-2 s^-1')
 plt.plot(energy.value, energy_flux.value, label='Meyer (2010) model', lw=3)
 
-plt.title('Crab pulsar and nebula spectral energy distribution (SED)')
+plt.title('Crab spectral energy distribution (SED)')
 plt.xlim((3e-14, 3e8))
 plt.ylim((3e-13, 3e-7))
 plt.xlabel('Energy (MeV)')
