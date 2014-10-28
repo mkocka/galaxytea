@@ -7,7 +7,7 @@ mass_flow = 5.0		# mass flow from disk
 Rc = 1.0*10.0**-4		# diameter of central object /10**10cm
 
 Ri = 1.001*10.0**-4		# inner radius
-Rf = 10.0**-4			# outer radius
+Rf = 10.0**-3			# outer radius
 Rstep = 10.0**-6			# step for computing
 
 R_x = []
@@ -32,7 +32,7 @@ for R in np.arange(Ri,Rf,Rstep):
 	TAU.append(190.0*alfa**(-4.0/5)*mass_flow**(1.0/5)*f**(4.0/5))
 	NI.append(1.8*10.0**14.0*alfa**(4.0/5)*mass_flow**(3.0/10)*m1**(-1.0/4)*R**(3.0/4)*f**(6.0/5))
 	Vr.append(2.7*10.0**4.0*alfa**(4.0/5)*mass_flow**(3.0/10)*m1**(-1.0/4)*R**(-1.0/4)*f**(-14.0/5))
-reset()	
+
 matplotlib.rcParams.update({'font.size': 12, 'font.family': 'serif'})
 
 
