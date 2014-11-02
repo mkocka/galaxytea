@@ -1,6 +1,7 @@
 from pylab import *
 from astropy.constants import sigma_sb as SB
 from scipy import constants as const
+import numpy as np
 SB = float(SB.value)
 
 def planck_law(T,lam_i,lam_f,step = 0.1):			# units are m^-2.nm^-1.sr^-1
@@ -34,8 +35,8 @@ def integral3(x, y):						# simpson method
 	h = x[1]-x[0]
 	
 	if len(x)%2 == 0:
-		y.remove(y[-1])				# simpson method requires odd number of elements
-		x.remove(x[-1])				# simple sacrifice of the last element is the number is even
+		del y[-1]				# simpson method requires odd number of elements
+		del x[-1]				# simple sacrifice of the last element is the number is even
 								# did not look for better solution, perhaps testing if last element is relevant
 	
 	integral += h/3.0*(y[0]+y[-1])				# first and last element with coeficient 1
@@ -50,7 +51,7 @@ def integral3(x, y):						# simpson method
 	
 	return integral
 
-planck_x, planck, total = planck_law(5000,5,10000)
+planck_x, planck, total = planck_law(5000,5,10000,0.01)
 
 int1 = integral1(planck_x,planck)
 int2 = integral2(planck_x,planck)
@@ -64,6 +65,7 @@ print "Third method:",int3*const.pi, ", diffence:", abs(total-int3*const.pi), ab
 print
 
 
+
 matplotlib.rcParams.update({'font.size': 12, 'font.family': 'serif'})
 
 
@@ -73,5 +75,6 @@ title('Planck')
 xlabel('$\lambda$ (nm)')
 ylabel('B$_{\lambda}$(T) (W.m$^{-2}$.nm$^{-1}$.sr$^{-1}$)')
 xlim([0,5000])
+grid()
 plot(planck_x,planck)
 savefig("planck.png")
