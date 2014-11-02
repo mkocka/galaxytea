@@ -66,10 +66,10 @@ plot_multiple(5000,10000,1000,10,2000)
 
 #defining boundries of calculating function
 lambda_initial=10
-lambda_final=10000
+lambda_final=3000
 
 #temperature of blackbody
-temperature=5000
+temperature=5778
 
 #calculating planck function
 a, b = planck(temperature,lambda_initial,lambda_final) 
