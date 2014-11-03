@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 def galaxy_tea_1(n):
-	Rhv = 1*10**10
+	Rhv = 1
 	alpha = 0.4
 	M16 = 5
 	m1 = 12
@@ -15,7 +15,7 @@ def galaxy_tea_1(n):
 	ny = []
 	vr = []
 	R_10 = []
-	for R in range(Rhv+1*10**10,n*10**10,1*10**10):
+	for R in range(Rhv+1,n,1):
 		R_10.append(float(R))	
 		R10 = (float(R))
 		f = (1-(Rhv/float(R))**0.5)**0.25
