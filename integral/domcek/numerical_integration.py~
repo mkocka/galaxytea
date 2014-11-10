@@ -93,7 +93,7 @@ print "Stephan-Boltzman law:", stef_boltz
 print "Midpoint rule method:", midpoint_rule(a,b)*const.pi, "Sigma:", midpoint_rule(a,b)*const.pi/(temperature**4)
 print "Trapezoid rule method:", trapezoid_rule(a,b)*const.pi, "Sigma:", trapezoid_rule(a,b)*const.pi/(temperature**4)
 print "Simpson's rule method:", simpson(a,b)*const.pi, "Sigma:", simpson(a,b)*const.pi/(temperature**4)
-print "Theoretical Sigma:", ((const.pi)**2*(const.k)**4)/(60*((const.h)/(2*const.pi))**3*(const.c)**2)
+print "Theoretical Sigma:", ((const.pi)**2*(const.k)**4)/(60*((const.h)/(2*const.pi))**3*(const.c)**2
 print
 print "Relative errors"
 print 30*"-"
