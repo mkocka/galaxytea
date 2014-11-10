@@ -20,7 +20,7 @@ Rstep = 10.0**-6		# step for computing
 Tc = []
 R_x = []
 
-for R in np.arange(Ri,Rf,Rstep):
+for R in np.arange(Ri,Rf,Rstep):		# creating the temperature profile
 	R_x.append(R)
 
 	f = (1.0-(Rc/R)**(0.5))**(0.25)
@@ -33,7 +33,7 @@ ylabel('T$_{c}$ (K)')
 plot(R_x,Tc)
 savefig("Tc.png")
 
-def planck_law(E,T_in,T_out,step = 1):
+def planck_law(E,T_in,T_out,step = 1):			#returns rectangular integral of the planck_law created for constant energy and changing temperature 
 	
 	
 	c1 = 2.0*const.pi/(con_h**3.0*const.c**2.0)*const.e
@@ -53,7 +53,7 @@ def planck_law(E,T_in,T_out,step = 1):
 	
 	return total
 
-def mbb(r_in,E_in,E_out,E_step,T_in,T_out,T_step,D,theta):
+def mbb(r_in,E_in,E_out,E_step,T_in,T_out,T_step,D,theta):				# construct the mbb spectrum, takes r_in and T_in from the temperature profile
 	
 	c1 = 8.0*const.pi*r_in**2.0*np.cos(np.radians(theta))/(3.0*D**2.0)
 
